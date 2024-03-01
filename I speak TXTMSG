@@ -1,0 +1,33 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		HashMap<String, String> tran = new HashMap<>();
+		Scanner scan = new Scanner(System.in);
+		tran.put("CU", "see you");
+		tran.put(":-)", "I’m happy");
+		tran.put(":-(", "I’m unhappy");
+		tran.put(";-)", "wink");
+		tran.put(":-P", "stick out my tongue");
+		tran.put("(~.~)", "sleepy");
+		tran.put("TA", "totally awesome");
+		tran.put("CCC", "Canadian Computing Competition");
+		tran.put("CUZ", "because");
+		tran.put("TY", "thank-you");
+		tran.put("YW", "you’re welcome");
+		tran.put("TTYL", "talk to you later");
+		while(scan.hasNext()) {
+			String str = scan.next();
+			if(str.equals("TTYL")) {
+				System.out.println(tran.get("TTYL"));
+				break;
+			}
+			else{
+				System.out.println(tran.getOrDefault(str, str));
+			}
+		}
+	
+}
+}
