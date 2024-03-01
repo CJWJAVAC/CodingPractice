@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int time = scan.nextInt();
+		int minute = scan.nextInt();
+		int sec = scan.nextInt();
+		int cooking = scan.nextInt();
+		int K = cooking+sec;
+		if(K>=60) {
+			minute=minute+K/60;
+			sec = K%60;
+			if(minute>=60) {
+				time=time+minute/60;
+				minute=minute%60;
+				if(time>=24) {
+					time=time%24;
+				}
+			}
+		}
+		else {
+			sec=K;
+		}
+		System.out.print(time+" "+minute+" "+sec);
+	}
+
+}
