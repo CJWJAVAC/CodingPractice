@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int sum = scan.nextInt();
+		int div = scan.nextInt();
+		if(sum<div)
+			System.out.println(-1);
+		else {
+			int MK= (sum+div)/2;
+			int AFC = (sum-div)/2;
+			if(MK+AFC==sum&&MK-AFC==div)
+				System.out.println(MK+" "+AFC);
+			else
+				System.out.println(-1);
+		}
+	}
+
+}
